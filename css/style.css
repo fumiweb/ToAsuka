@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 40px; /* ← 上に少し余白を足して「やや上」に見せる */
   font-family: 'Zen Kaku Gothic New', sans-serif;
   background: linear-gradient(to bottom, #e0f7fa, #ffffff);
   overflow: hidden;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* ← 上揃えに変更 */
   justify-content: center;
   position: relative;
 }
