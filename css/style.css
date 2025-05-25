@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0faff;
+  overflow: hidden;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  color: #003366;
+}
+
+.magic-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.stars, .clouds {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  animation: move 60s linear infinite;
+  background-repeat: repeat;
+  opacity: 0.2;
+}
+
+.stars {
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation-duration: 100s;
+}
+
+.clouds {
+  background-image: url('../img/clouds.png'); /* 水色の雲画像を置く場所 */
+  background-size: cover;
+  animation-duration: 80s;
+}
+
+@keyframes move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.container {
+  padding: 15vh 5%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #007acc;
+  margin-bottom: 1rem;
+  animation: sparkle 2s infinite alternate;
+}
+
+@keyframes sparkle {
+  0% { text-shadow: 0 0 5px #ffffff; }
+  100% { text-shadow: 0 0 20px #87cefa; }
+}
+
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.magic-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.magic-button:hover {
+  background-color: #005f99;
+}
