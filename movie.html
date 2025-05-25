@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Movie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* 背景 */
+    .soft-magic-light {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%),
+                  radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 80%);
+      background-size: 200px 200px;
+      animation: soft-glow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes soft-glow {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      100% { transform: translate(-20px, -20px) scale(1.05); opacity: 0.6; }
+    }
+
+    .magic-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 2px 2px;
+      animation: twinkle 20s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes twinkle {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100px, -100px); }
+    }
+
+    .container {
+      z-index: 3;
+      max-width: 90%;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 150, 255, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #007acc;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .video-box {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #007acc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="soft-magic-light"></div>
+  <div class="magic-bg">
+    <div class="stars"></div>
+  </div>
+
+  <div class="container">
+    <h1>まほうの予告動画📽️✨</h1>
+
+    <video controls src="img/movie.mp4" class="video-box"></video>
+
+    <p>この動画を見たあなたは、もう魔法の物語の主人公🪄</p>
+
+    <a href="magic.html" class="btn-back">⏪ 手紙にもどる</a>
+  </div>
+</body>
+</html>
